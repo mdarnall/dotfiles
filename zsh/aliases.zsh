@@ -23,6 +23,7 @@ alias df='df -h'
 alias ll='ls -alGh'
 alias ls='ls -Gh'
 alias du='du -h -d 2'
+alias l='ls -la'
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -30,6 +31,7 @@ alias lsg='ll | grep'
 # Alias Editing
 alias ae='vim $yadr/zsh/aliases.zsh' #alias edit
 alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
+alias ge='vim $yadr/git/gitconfig'
 
 # vim using
 mvim --version > /dev/null 2>&1
@@ -37,6 +39,7 @@ MACVIM_INSTALLED=$?
 if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
+alias v='vim'
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
@@ -47,7 +50,7 @@ alias zr='source ~/.zshrc'
 
 # Git Aliases
 alias gs='git status'
-alias gstsh='git stash'
+#alias gstsh='git stash'
 alias gst='git stash'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
@@ -105,7 +108,6 @@ alias gbb='git bisect bad'
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
-alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
@@ -114,7 +116,7 @@ alias cl='clear'
 alias gz='tar -zcvf'
 
 # Ruby
-alias c='rails c' # Rails 3
+#alias c='rails c' # Rails 3
 alias co='script/console --irb=pry' # Rails 2
 alias ts='thin start'
 alias ms='mongrel_rails start'
@@ -145,7 +147,10 @@ alias zc='zeus console'
 # Rspec
 alias rs='rspec spec'
 
+alias be='bundle exec'
+
+alias hk='heroku'
 # Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
-alias sp='sprintly'
+#alias sp='sprintly'
 # spb = sprintly branch - create a branch automatically based on the bug you're working on
-alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
+#alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
