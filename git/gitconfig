@@ -14,7 +14,7 @@
 [alias]
   # add
   a = add                           # add
-  chunkyadd = add --patch           # stage commits chunk by chunk
+  ap = add --patch
 
   # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
@@ -22,6 +22,7 @@
 
   # branch
   b = branch -v                     # branch (verbose)
+  ba = branch --all
 
   # commit
   c = commit -m                     # commit with message
@@ -37,20 +38,29 @@
   # cherry-pick
   cp = cherry-pick -x               # grab a change from a branch
 
+  # merge
+  ff = merge --ff-only
+
   # diff
   d = diff                          # diff unstaged changes
   dc = diff --cached                # diff staged changes
   last = diff HEAD^                 # diff last committed change
 
   # log
-  l = log --graph --date=short
+  l = log
+  g = log --graph --all --decorate
+  la = log --all --decorate
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
   changelog = log --pretty=format:\" * %s\"
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+  standup = log --since '1 day ago' --oneline --author mdarnall@salesforce.com
 
   # pull
   pl = pull                         # pull
+
+  #fetch
+  in = fetch --dry-run --verbose
 
   # push
   ps = push                         # push
@@ -97,6 +107,7 @@
   summary = true
   verbosity = 1
   tool = mvimdiff
+  defaultToUpstream = true
 [apply]
   whitespace = nowarn
 [branch]
@@ -122,3 +133,7 @@
   enabled = true
 [include]
   path = .gitconfig.user
+
+[pull]
+  rebase = true
+
