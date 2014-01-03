@@ -16,3 +16,8 @@ alias -g G='| grep' # now you can do: ls foo G something
 # to find all files containing 'foo' in the name
 function fn() { ls **/*$1* }
 
+
+function mcd(){
+  mkdir -p $1
+  cd $1
+}
