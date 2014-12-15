@@ -46,7 +46,7 @@ alias ve='vim ~/.vimrc'
 
 # zsh profile editing
 alias ze='vim ~/.zshrc'
-alias zr='source ~/.zshrc'
+alias zr='source ~/.zshrc; source ~/.zshenv'
 
 # Git Aliases
 alias gs='git status'
@@ -80,6 +80,7 @@ alias gl='git l'
 alias glg='git l'
 alias glog='git l'
 alias co='git co'
+alias gg='git graph'
 alias gf='git fetch'
 alias gfch='git fetch'
 alias gd='git diff'
@@ -115,6 +116,9 @@ alias cl='clear'
 # Zippin
 alias gz='tar -zcvf'
 
+#json pretty print
+alias jpp='python -m json.tool'
+
 # Ruby
 #alias c='rails c' # Rails 3
 alias co='script/console --irb=pry' # Rails 2
@@ -149,6 +153,7 @@ alias rs='rspec spec'
 
 alias be='bundle exec'
 
+alias ne='PATH=$(npm bin):$PATH'
 alias hk='heroku'
 # Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
 #alias sp='sprintly'

@@ -92,6 +92,11 @@
   # tag
   t = tag -n                        # show tags with <n> lines of each tag message
 
+  # unchanged
+  unchanged = update-index --assume-unchanged 
+  changed = update-index --no-assume-unchanged 
+
+
   # svn helpers
   svnr = svn rebase
   svnd = svn dcommit
@@ -113,6 +118,7 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
+	autosetuprebase = always
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
@@ -121,6 +127,7 @@
   autocrlf = false
   editor = vim
 	excludesfile = /Users/mdarnall/.yadr/git/gitignore
+	page = less
 [advice]
   statusHints = false
 [diff]
@@ -147,3 +154,6 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[hub]
+[hub]
+	host = git.soma.salesforce.com

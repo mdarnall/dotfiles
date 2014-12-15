@@ -33,3 +33,5 @@ Session.vim
 
 #jetbrains
 .idea
+bin/start-localhost-fwd.sh
+bin/start-localhost.sh
