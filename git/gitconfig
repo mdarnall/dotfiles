@@ -80,6 +80,7 @@
   uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
   filelog = log -u                  # show changes to a file
   mt = mergetool                    # fire up the merge tool
+  su = submodule update --recursive
 
   # stash
   ss = stash                        # stash changes
@@ -160,3 +161,5 @@
 [hub]
 [hub]
 	host = git.soma.salesforce.com
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
