@@ -1,0 +1,4 @@
+[submodule "zsh/pretzo"]
+	path = zsh/pretzo
+	url = git@github.com:sorin-ionescu/prezto.git
+	ignore = dirty
