@@ -45,6 +45,6 @@ Session.vim
 .sass-cache
 
 #jetbrains
-.idea
+.idea/
 bin/start-localhost-fwd.sh
 bin/start-localhost.sh

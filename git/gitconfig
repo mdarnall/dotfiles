@@ -64,6 +64,8 @@
 
   #fetch
   in = fetch --dry-run --verbose
+  f = fetch
+
 
   # push
   ps = push                         # push
@@ -97,8 +99,8 @@
   t = tag -n                        # show tags with <n> lines of each tag message
 
   # unchanged
-  unchanged = update-index --assume-unchanged 
-  changed = update-index --no-assume-unchanged 
+  unchanged = update-index --assume-unchanged
+  changed = update-index --no-assume-unchanged
 
 
   # svn helpers
@@ -122,7 +124,7 @@
   whitespace = nowarn
 [branch]
   autosetupmerge = true
-	autosetuprebase = always
+  autosetuprebase = always
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
@@ -130,7 +132,7 @@
 [core]
   autocrlf = false
   editor = vim
-	excludesfile = /Users/mdarnall/.yadr/git/gitignore
+	excludesfile = /Users/mdarnall/.gitignore
 	page = less
 [advice]
   statusHints = false
@@ -145,10 +147,8 @@
   enabled = true
 [include]
   path = .gitconfig.user
-
 [pull]
   rebase = true
-
 [user]
 	name = Matt Darnall
 	email = mdarnall@salesforce.com
@@ -159,7 +159,14 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [hub]
-[hub]
 	host = git.soma.salesforce.com
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+[commit]
+	template = /Users/mdarnall/.stCommitMsg
+[credential]
+	helper = osxkeychain
