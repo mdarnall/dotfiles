@@ -102,7 +102,6 @@
   unchanged = update-index --assume-unchanged
   changed = update-index --no-assume-unchanged
 
-
   # svn helpers
   svnr = svn rebase
   svnd = svn dcommit
@@ -158,15 +157,11 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[hub]
-	host = git.soma.salesforce.com
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
-[commit]
-	template = /Users/mdarnall/.stCommitMsg
 [credential]
 	helper = osxkeychain
