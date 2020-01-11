@@ -1,7 +1,7 @@
 # Aliases in this file are bash and zsh compatible
 
 # Don't change. The following determines where YADR is installed.
-yadr=$HOME/.yadr
+yadr=$HOME/.dotfiles
 
 # Get operating system
 platform='unknown'
@@ -11,13 +11,6 @@ if [[ $unamestr == 'Linux' ]]; then
 elif [[ $unamestr == 'Darwin' ]]; then
   platform='darwin'
 fi
-
-# YADR support
-alias yav='yadr vim-add-plugin'
-alias ydv='yadr vim-delete-plugin'
-alias ylv='yadr vim-list-plugin'
-alias yup='yadr update-plugins'
-alias yip='yadr init-plugins'
 
 # PS
 alias psa="ps aux"
@@ -74,13 +67,6 @@ alias zr='source ~/.zshrc; source ~/.zshenv'
 
 # Git Aliases
 alias gs='git status'
-#alias gstsh='git stash'
-alias gst='git stash'
-alias gsp='git stash pop'
-alias gsa='git stash apply'
-alias gsh='git show'
-alias gshw='git show'
-alias gshow='git show'
 alias gi='vim .gitignore'
 alias gcm='git ci -m'
 alias gcim='git ci -m'
@@ -126,6 +112,7 @@ alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset'
 alias gsrsh='git submodule foreach git reset --hard'
 alias gsur='git submodule update --recursive'
+alias gsubs='git submodule foreach git status'
 alias grsh='git reset --hard'
 alias gcln='git clean'
 alias gclndf='git clean -df'
@@ -152,61 +139,25 @@ alias gz='tar -zcvf'
 #json pretty print
 alias jpp='python -m json.tool'
 
-# Ruby
-#alias c='rails c' # Rails 3
-#alias co='script/console' # Rails 2
-#alias cod='script/console --debugger'
-#If you want your thin to listen on a port for local VM development
-#export VM_IP=10.0.0.1 <-- your vm ip
-#alias ts='thin start -a ${VM_IP:-127.0.0.1}'
-#alias ms='mongrel_rails start'
-#alias tfdl='tail -f log/development.log'
-#alias tftl='tail -f log/test.log'
-
 alias ka9='killall -9'
 alias k9='kill -9'
 
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
 
-# TODOS
-# This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
-# to find the note called 'todo'
-#alias todo='open nvalt://find/todo'
-
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
-# Zeus
-#alias zs='zeus server'
-#alias zc='zeus console'
-# Rspec
-# alias rs='rspec spec'
-# alias sr='spring rspec'
-# alias src='spring rails c'
-# alias srgm='spring rails g migration'
-# alias srdm='spring rake db:migrate'
-# alias srdt='spring rake db:migrate'
-# alias srdmt='spring rake db:migrate db:test:prepare'
-# Rake
-# alias rdm='rake db:migrate'
-# alias rdmr='rake db:migrate:redo'
-# alias dbtp='spring rake db:test:prepare'
-# alias dbm='spring rake db:migrate'
-# alias dbmr='spring rake db:migrate:redo'
-# alias dbmd='spring rake db:migrate:down'
-# alias dbmu='spring rake db:migrate:up'
-
 alias be='bundle exec'
 
+# Node 
 alias ne='PATH=$(npm bin):$PATH'
-alias hk='heroku'
-# Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
-#alias sp='sprintly'
-# spb = sprintly branch - create a branch automatically based on the bug you're working on
-#alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
+alias rmnm='rm -rf node_modules/'
 
-alias hpr='hub pull-request'
+#Xcode
+alias rmdd='rm -rf DerivedData/'
+
+alias hk='heroku'
 
 # Finder
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
@@ -214,3 +165,6 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 # Homebrew
 alias brewu='brew update  && brew upgrade && brew cleanup && brew prune && brew doctor'
+
+# react native
+alias whichmetro='lsof -i :8081'
