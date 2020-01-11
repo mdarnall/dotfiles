@@ -128,10 +128,11 @@
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
   default = upstream
+	gpgsign = if-asked
 [core]
   autocrlf = false
   editor = vim
-	excludesfile = /Users/mdarnall/.gitignore
+	excludesfile = /Users/mdarnall/.gitignore_global
 	page = less
 [advice]
   statusHints = false
@@ -151,11 +152,12 @@
 [user]
 	name = Matt Darnall
 	email = mdarnall@salesforce.com
+	signingkey = 85952C2FACC24552
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
@@ -165,3 +167,8 @@
 	smudge = git-lfs smudge %f
 [credential]
 	helper = osxkeychain
+[commit]
+	#gpgsign = true
+	template = ~/.gitmessage
+[gpg]
+	program = /usr/local/bin/gpg
